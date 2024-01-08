@@ -51,7 +51,7 @@
                     // echo $targetFile;
                     // echo __FILE__.$targetFile."<br>";
                     // echo $targetDir;
-                    if ( move_uploaded_file($_FILES["imagen"]["tmp_name"], __FILE__.$targetFile)) {
+                    if ( move_uploaded_file($_FILES["imagen"]["tmp_name"], "/app/uploads/".$targetFile)) {
                         echo "El archivo ". basename($_FILES["imagen"]["name"]) . " ha sido subido.";
                     } else {
                         echo "Lo sentimos, hubo un error al cargar su archivo.";
