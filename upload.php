@@ -3,7 +3,7 @@
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Verifica si se ha enviado un archivo
     if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
-        $targetDir = "uploads/";
+        $targetDir = "public/uploads/";
         $targetFile = $targetDir . basename($_FILES["image"]["name"]);
 
         // Mueve el archivo al directorio de destino

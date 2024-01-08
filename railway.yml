@@ -1,0 +1,3 @@
+deploy:
+  postbuild:
+    - chmod -R 755 public/uploads
