@@ -49,7 +49,7 @@
         }else{
                     // Move the file to the specified directory
                     // echo $targetFile;
-                    echo __FILE__.$targetFile;
+                    echo __FILE__.$targetFile."<br>";
                     echo $targetDir;
                     // if ( move_uploaded_file($_FILES["imagen"]["tmp_name"], $targetFile)) {
                     //     echo "El archivo ". basename($_FILES["imagen"]["name"]) . " ha sido subido.";
