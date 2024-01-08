@@ -5,11 +5,11 @@
 
     if ( $_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["imagen"])) {
 
-        $targetDir = "/uploads/";
+        $targetDir = "uploads/";
         $targetFile = $targetDir . basename($_FILES["imagen"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-        $imagen =  "/uploads/" . $_FILES["imagen"]["name"];
+        $imagen =  "uploads/" . $_FILES["imagen"]["name"];
      
         // Comprueba si el archivo de imagen es una imagen real o una imagen falsa
         if (isset($_POST["submit"])) {
@@ -49,13 +49,13 @@
         }else{
                     // Move the file to the specified directory
                     // echo $targetFile;
-                    echo __FILE__.$targetFile."<br>";
-                    echo $targetDir;
-                    // if ( move_uploaded_file($_FILES["imagen"]["tmp_name"], $targetFile)) {
-                    //     echo "El archivo ". basename($_FILES["imagen"]["name"]) . " ha sido subido.";
-                    // } else {
-                    //     echo "Lo sentimos, hubo un error al cargar su archivo.";
-                    // }
+                    // echo __FILE__.$targetFile."<br>";
+                    // echo $targetDir;
+                    if ( move_uploaded_file($_FILES["imagen"]["tmp_name"], __FILE__.$targetFile)) {
+                        echo "El archivo ". basename($_FILES["imagen"]["name"]) . " ha sido subido.";
+                    } else {
+                        echo "Lo sentimos, hubo un error al cargar su archivo.";
+                    }
         }
     
 
