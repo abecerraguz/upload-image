@@ -51,11 +51,18 @@
                     // echo $targetFile;
                     // echo __FILE__.$targetFile."<br>";
                     // echo $targetDir;
-                    if ( move_uploaded_file($_FILES["imagen"]["tmp_name"], "/app/".$targetFile)) {
-                        echo "El archivo ". basename($_FILES["imagen"]["name"]) . " ha sido subido.";
-                    } else {
-                        echo "Lo sentimos, hubo un error al cargar su archivo.";
+                    $fichero = $_SERVER['DOCUMENT_ROOT']."{$targetDir}/";
+
+                    if(FilesController::deleteFiles($fichero)){
+                        if ( move_uploaded_file($_FILES["imagen"]["tmp_name"], $fichero.basename($_FILES["imagen"]["tmp_name"]) )) {
+                            echo "El archivo ". basename($_FILES["imagen"]["name"]) . " ha sido subido.";
+                        } else {
+                            echo "Lo sentimos, hubo un error al cargar su archivo.";
+                        }
                     }
+
+
+                 
         }
     
 
@@ -63,5 +70,18 @@
     } else {
         echo "El formulario no se ha enviadoooooooo.";
     }
+
+
+    // $dir = "/Jomar/induccion/documents/";
+    // if(isset($_FILES["mision_vision"]) && $_FILES["mision_vision"] != null){
+    //     $fichero = $_SERVER['DOCUMENT_ROOT']."{$dir}mision, vision/";
+    //     if(FilesController::deleteFiles($fichero)){
+    //         if(  move_uploaded_file($_FILES["mision_vision"]["tmp_name"], $fichero.basename($_FILES["mision_vision"]["name"])  )   ){
+    //             echo "Subido correctamente";
+    //         }else{
+    //             echo "Error al intentar subir";
+    //         }
+    //     }
+    // }
 
 ?>
