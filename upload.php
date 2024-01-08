@@ -48,10 +48,10 @@
                 echo "Lo sentimos, su archivo no fue subido.";
         }else{
     
-            $dir = "upload-image/uploads/";
+            $dir = "uploads/";
             $fichero = $_SERVER['DOCUMENT_ROOT']."/{$dir}";
             echo $fichero;
-            
+
             // if(isset($_FILES["imagen"]) && $_FILES["imagen"] != null){
             //     $fichero = $_SERVER['DOCUMENT_ROOT']."/{$dir}";
                     
