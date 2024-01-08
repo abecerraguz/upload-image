@@ -47,18 +47,19 @@
         if($uploadOk == 0){
                 echo "Lo sentimos, su archivo no fue subido.";
         }else{
-                    // Move the file to the specified directory
-                    // echo $targetFile;
-                    // echo __FILE__.$targetFile."<br>";
-                    // echo $targetDir;
-                    $fichero = $_SERVER['DOCUMENT_ROOT']."{$targetDir}/";
-
-                   
-                        if ( move_uploaded_file($_FILES["imagen"]["tmp_name"], $fichero.basename( $_FILES["imagen"]["tmp_name"] )) {
-                            echo "El archivo ". basename($_FILES["imagen"]["name"]) . " ha sido subido.";
-                        } else {
-                            echo "Lo sentimos, hubo un error al cargar su archivo.";
-                        }
+    
+            $dir = "upload-image/uploads/";
+            if(isset($_FILES["imagen"]) && $_FILES["imagen"] != null){
+                $fichero = $_SERVER['DOCUMENT_ROOT']."/{$dir}";
+                    
+                    if(  move_uploaded_file($_FILES["imagen"]["tmp_name"], $fichero.basename($_FILES["imagen"]["tmp_name"])  )   ){
+                        echo "Subido correctamente";
+                    }else{
+                        echo $fichero;
+                        echo "<br>Error al intentar subir";
+                    }
+           
+            }
                 
 
 
@@ -72,16 +73,6 @@
     }
 
 
-    // $dir = "/Jomar/induccion/documents/";
-    // if(isset($_FILES["mision_vision"]) && $_FILES["mision_vision"] != null){
-    //     $fichero = $_SERVER['DOCUMENT_ROOT']."{$dir}mision, vision/";
-    //     if(FilesController::deleteFiles($fichero)){
-    //         if(  move_uploaded_file($_FILES["mision_vision"]["tmp_name"], $fichero.basename($_FILES["mision_vision"]["name"])  )   ){
-    //             echo "Subido correctamente";
-    //         }else{
-    //             echo "Error al intentar subir";
-    //         }
-    //     }
-    // }
+
 
 ?>
