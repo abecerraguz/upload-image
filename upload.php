@@ -50,19 +50,19 @@
     
             $dir = "uploads/";
             $fichero = $_SERVER['DOCUMENT_ROOT']."/{$dir}";
-            echo $fichero;
+            // echo $fichero;
 
-            // if(isset($_FILES["imagen"]) && $_FILES["imagen"] != null){
-            //     $fichero = $_SERVER['DOCUMENT_ROOT']."/{$dir}";
+            if(isset($_FILES["imagen"]) && $_FILES["imagen"] != null){
+                $fichero = $_SERVER['DOCUMENT_ROOT']."/{$dir}";
                     
-            //         if(  move_uploaded_file($_FILES["imagen"]["tmp_name"], $fichero.basename($_FILES["imagen"]["tmp_name"])  )   ){
-            //             echo "Subido correctamente";
-            //         }else{
-            //             echo $fichero;
-            //             echo "<br>Error al intentar subir";
-            //         }
+                    if(  move_uploaded_file($_FILES["imagen"]["tmp_name"], $fichero.basename($_FILES["imagen"]["tmp_name"])  )   ){
+                        echo "Subido correctamente";
+                    }else{
+                        echo $fichero;
+                        echo "<br>Error al intentar subir";
+                    }
            
-            // }
+            }
                 
 
 
