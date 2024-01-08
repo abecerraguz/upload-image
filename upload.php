@@ -48,11 +48,12 @@
                 echo "Lo sentimos, su archivo no fue subido.";
         }else{
                     // Move the file to the specified directory
-                    if ( move_uploaded_file($_FILES["imagen"]["tmp_name"], $targetFile)) {
-                        echo "El archivo ". basename($_FILES["imagen"]["name"]) . " ha sido subido.";
-                    } else {
-                        echo "Lo sentimos, hubo un error al cargar su archivo.";
-                    }
+                    echo $targetFile;
+                    // if ( move_uploaded_file($_FILES["imagen"]["tmp_name"], $targetFile)) {
+                    //     echo "El archivo ". basename($_FILES["imagen"]["name"]) . " ha sido subido.";
+                    // } else {
+                    //     echo "Lo sentimos, hubo un error al cargar su archivo.";
+                    // }
         }
     
 
