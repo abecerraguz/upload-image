@@ -5,11 +5,11 @@
 
     if ( $_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["imagen"])) {
 
-        $targetDir = "uploads/";
+        $targetDir = "/uploads/";
         $targetFile = $targetDir . basename($_FILES["imagen"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-        $imagen =  "uploads/" . $_FILES["imagen"]["name"];
+        $imagen =  "/uploads/" . $_FILES["imagen"]["name"];
      
         // Comprueba si el archivo de imagen es una imagen real o una imagen falsa
         if (isset($_POST["submit"])) {
