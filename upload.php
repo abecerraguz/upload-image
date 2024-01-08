@@ -53,13 +53,13 @@
                     // echo $targetDir;
                     $fichero = $_SERVER['DOCUMENT_ROOT']."{$targetDir}/";
 
-                    if(FilesController::deleteFiles($fichero)){
+                   
                         if ( move_uploaded_file($_FILES["imagen"]["tmp_name"], $fichero.basename($_FILES["imagen"]["tmp_name"]) )) {
                             echo "El archivo ". basename($_FILES["imagen"]["name"]) . " ha sido subido.";
                         } else {
                             echo "Lo sentimos, hubo un error al cargar su archivo.";
                         }
-                    }
+                
 
 
                  
