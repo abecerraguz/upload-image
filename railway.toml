@@ -1,2 +1,3 @@
-[scripts]
-postdeploy = "npm run postdeploy"
+# En railway.toml
+[build]
+postbuild = "chmod -R 755 public/uploads"
